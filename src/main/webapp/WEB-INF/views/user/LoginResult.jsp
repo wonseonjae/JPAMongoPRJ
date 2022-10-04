@@ -1,4 +1,4 @@
-<%@ page import="kopo.poly.util.CmmUtil" %><%--
+<%@ page import="poly.jpamongoprj.util.CmmUtil" %><%--
   Created by IntelliJ IDEA.
   User: data12
   Date: 2022-09-13

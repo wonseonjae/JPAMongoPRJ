@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page import="kopo.poly.util.CmmUtil" %>
-<%@ page import="kopo.poly.dto.UserInfoDTO" %>
+<%@ page import="poly.jpamongoprj.util.CmmUtil" %>
+<%@ page import="poly.jpamongoprj.dto.UserInfoDTO" %>
 <%
   //Controller로부터 전달받은 데이터
   String msg = CmmUtil.nvl((String) request.getAttribute("msg"));

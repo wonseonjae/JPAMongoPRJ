@@ -42,7 +42,9 @@
   </div>
   <div class="divTableBody">
     <%
+      int cnt = rList.size();
       for (NoticeDTO rDTO : rList) {
+
         if (rDTO == null) {
           rDTO = new NoticeDTO();
         }
@@ -56,9 +58,11 @@
             html += ("<b>[공지]</b>");
             //공지글이 아니라면, 글번호 보여주기
           } else {
-            html += (rDTO.getNoticeSeq());
+            html += cnt;
+            cnt--;
+
           }
-        %><%= html%>
+        %><%=html%>
       </div>
       <div class="divTableCell">
         <a href="javascript:doDetail('<%=rDTO.getNoticeSeq()%>');">
@@ -73,6 +77,7 @@
       </div>
     </div>
     <%
+
       }
     %>
   </div>
