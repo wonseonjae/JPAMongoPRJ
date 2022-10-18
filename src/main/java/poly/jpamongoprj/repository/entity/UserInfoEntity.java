@@ -11,6 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 @AllArgsConstructor
 @Document(collection = "USER_INFO")
 public class UserInfoEntity {
+
     @Id
     private String userSeq;
 
@@ -49,5 +50,8 @@ public class UserInfoEntity {
 
     @Field(name = "CHG_DT")
     private String chgDt;
+
+    @Field(name = "ROLES")
+    private String roles;
 
 }

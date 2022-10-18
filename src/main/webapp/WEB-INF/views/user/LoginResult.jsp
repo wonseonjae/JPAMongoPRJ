@@ -1,30 +1,31 @@
-<%@ page import="poly.jpamongoprj.util.CmmUtil" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: data12
-  Date: 2022-09-13
-  Time: 오후 2:48
+  Date: 2022-10-11
+  Time: 오후 2:57
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="poly.jpamongoprj.util.CmmUtil" %>
 <%
-  String SS_USER_ID = CmmUtil.nvl((String) session.getAttribute("SS_USER_ID"));
-  String res = CmmUtil.nvl((String) request.getAttribute("res"));
-
-  String msg = "";
-
-  if (res.equals("1")){
-      msg = SS_USER_ID + "님 환영합니다.";
-  } else if (res.equals("0")){
-      msg = "아이디, 비밀번호가 일치하지 않습니다.";
-  } else {
-      msg = "시스템 오류로 실패하였습니다.";
-  }
+    //Controller에 저장된 세션으로 로그인할때 생성됨
+    String SS_USER_ID = CmmUtil.nvl((String) session.getAttribute("SS_USER_ID"));
+    String res = CmmUtil.nvl((String) request.getAttribute("res"));
+    String msg = "";
+    if (res.equals("1")) {
+        msg = SS_USER_ID + "님이 로그인 되었습니다.";
+    } else if (res.equals("0")) {
+        msg = "아이디, 비밀번호가 일치하지 않습니다.";
+    } else {
+        msg = "시스템에 문제가 발생하였습니다. 잠시후 다시 시도하여 주시길 바랍니다.";
+    }
 %>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title><%=msg%>></title>
+    <meta charset="UTF-8">
+    <title><%=msg%></title>
 </head>
 <body>
-    <%=msg%>
+<%=msg %>
 </body>
 </html>
