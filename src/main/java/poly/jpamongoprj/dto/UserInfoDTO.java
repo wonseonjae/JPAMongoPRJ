@@ -3,9 +3,11 @@ package poly.jpamongoprj.dto;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
+
 @Getter
 @Setter
-public class UserInfoDTO {
+public class UserInfoDTO implements Serializable {
 
     private String userSeq;
     private String userId;
